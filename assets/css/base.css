@@ -1,0 +1,206 @@
+:root{
+    --primary-color:#ee4d2d;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+    /* --star-gold-color: #f8f80c; */
+    --header-height: 120px;
+    --navbar-height: 31px;
+    --header-width-search: calc(var(--header-height) - var(--navbar-height));
+    --haeder__search-sort-bar-height: 46px;
+}
+
+*{
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    /* padding: 0;
+    margin: 0; */
+}
+
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width{
+    width: 100%;
+}
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.grid__column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+.grid__column-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+/* Animation */
+@keyframes fadeIn{
+    from { 
+        opacity: 0;
+    }
+    to { 
+        opacity:0;
+    }
+}
+@keyframes growth {
+    from { 
+        transform: scale(var(--growth-from));
+    }
+    to { 
+        transform: scale(var(--growth-to));
+    }
+}
+/* Modal */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: fadeIn linear 0.1s;
+}
+.modal__body{
+    --growth-fron: 0.7;
+    --grownt-to: 1;
+    width: 500px;
+    background-color: var(--white-color);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: auto;
+    z-index: 1;
+    animation: growth linear 0.1s;
+}
+/* Button style */
+.authen-btn{
+    min-width: 124px;
+    height: 34px;
+    border: none;
+    text-decoration: none;
+    font-size: 1.4rem;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--white-color);
+    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.authen-btn.btn--size-s{
+    height: 32px;
+    font-size: 1.2rem;
+    padding: 0 8px;
+}
+.authen-form__control-back:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.authen-btn.authen-btn--primary{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+/* select input */
+.select-input{
+    min-width: 200px;
+    height: 34px;
+    padding: 0 12px;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.select-input:hover .select-input__list{
+    display: block;
+}
+.select-input__label{
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+.select-input__icon{
+    font-size: 1.4rem;
+}
+.select-input__list{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    background-color: var(--white-color);
+    list-style: none;
+    padding: 8px 12px;
+    border-radius: 2px;
+    display: none;
+    z-index: 1;
+}
+.select-input__list::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 12px;
+    top: -12px;
+    right: 0;
+    left: 0;
+}
+.select-intput__link{
+    text-decoration: none;
+    font-size: 1.4rem;
+    display: block;
+    padding: 4px 0;
+    color: var(--text-color);
+}
+.select-intput__link:hover{
+    color: var(--primary-color);
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+}
+.pagination__item{
+    margin: 0 16px;
+}
+.pagination__item-link{
+    text-decoration: none;
+    font-size: 2rem;
+    color: #939393;
+    display: block;
+    min-width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 2px;
+}
+.pagination__item-link--active {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
